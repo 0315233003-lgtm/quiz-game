@@ -12,25 +12,57 @@ console.log("Script started");
 */
 
 // TODO: Create an array of objects to store the questions, options, and answer
+let questions = [
+    {
+        question: "what is the capital of Arizona?",
+        option1: "Phoenix",
+        option2: "Tucson",
+        option3: "Pima",
+        option4: "Oracle"
 
+    }, 
+    { 
+        questions:"How many states are in the US?",
+        option1:"48",
+        option2: "67",
+        option3: "50",
+        option4: "56"
+    }
+];
+console.log(questions);
 // TODO: Declare an empty array that will hold the user's answers
-
+let userAnswers = [];
 // TODO: Declare a variable to keep track of which question (index) we are on
+let questionNum = 0;
 
 function showNextQuestion() {
     // TODO: Get the current question
-    
+    let currQues = questions[questionNum];
     // TODO: Set the text of the question element
+    let question =document.getElementById("question");
+    question.innerText = currQues.question;
 
+    let option1 = document.getElementById("option1text");
+    option.innerText = currQues.question;
+
+    let option2 = document.getElementById("option1text");
+    option.innerText = currQues.question;
+
+    let option3 = document.getElementById("option1text");
+    option.innerText = currQues.question;
+    
+    let option4 = document.getElementById("option1text");
+    option.innerText = currQues.question;
     // TODO: Set the text of each option element
 }
 
 // TODO: Call showNextQuestion to load the first question when the page loads
+showNextQuestion();
 
 function submitAnswer(event) {
     console.log("Submit clicked");
     // TODO: Prevent the form from reloading the page
-
+    event.preventDefault();
     // Get the radio button input elements
     let option1 = document.getElementById("option1");
     let option2 = document.getElementById("option2");
@@ -38,9 +70,20 @@ function submitAnswer(event) {
     let option4 = document.getElementById("option4");
 
     // TODO: Get the current question
-
+    let currQues = questions[questionNum];
     // TODO: Use a conditional (if/else-if) to check which option was clicked and push the option text into the userAnswer array
-
+    if (option1.checked){
+       userAnswers.push(currQuess.option1)
+    }
+    else if (option2.checked){
+    userAnswers.push(currQuess.option2)
+    }
+    else if (option3. checked) {
+    userAnswers.push(currQuess.option3)
+    }
+    else if (option4. checked) {
+    userAnswers.push(currQuess.option4)
+    }
     // TODO: Add one to the question index
 
     // TODO: Load the next question
